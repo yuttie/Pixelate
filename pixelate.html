@@ -48,7 +48,14 @@
         $(function() {
             var max_size = 512;
             window.URL = window.URL || window.webkitURL;
-            $('#canvas').on('click', function() {
+
+            // http://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
+            function is_touch_device() {
+                return !!('ontouchstart' in window) // works on most browsers
+                    || !!('onmsgesturechange' in window); // works on ie10
+            }
+
+            $('#canvas').on(is_touch_device() ? 'click' : 'dblclick', function() {
                 $('#launchCamera').click();
             });
             var view_x;
