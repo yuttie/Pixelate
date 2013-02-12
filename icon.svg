@@ -104,18 +104,18 @@
        id="linearGradient3982"
        gradientUnits="userSpaceOnUse"
        x1="3.125e-14"
-       y1="32"
-       x2="63.999985"
-       y2="32"
+       y1="3.2812501e-14"
+       x2="63.999992"
+       y2="64"
        gradientTransform="translate(7.6293945e-6,1.9073486e-6)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3990"
        id="linearGradient4011"
        x1="7.6293945e-06"
-       y1="32"
-       x2="63.999992"
-       y2="32"
+       y1="1.9073486e-06"
+       x2="64"
+       y2="64"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
@@ -127,15 +127,15 @@
      inkscape:pageshadow="2"
      inkscape:zoom="3.8890873"
      inkscape:cx="28.441745"
-     inkscape:cy="-16.013109"
+     inkscape:cy="25.127649"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
      inkscape:grid-bbox="true"
      inkscape:window-width="1148"
-     inkscape:window-height="1050"
+     inkscape:window-height="523"
      inkscape:window-x="0"
-     inkscape:window-y="26"
+     inkscape:window-y="553"
      inkscape:window-maximized="0"
      inkscape:snap-page="true"
      inkscape:snap-midpoints="true"
@@ -152,7 +152,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -164,13 +164,7 @@
        y="0"
        x="0"
        id="image3937"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAPBJREFU
-OI3Fk6+KhUAUh393vaJgM5k02FTMmuYpBPEdjIJgtuoLTPQxjIJgNk4Qk9FuOJv2siruv3thvzgz
-55s5nN/ciIjwBG/PFJ8ETdPA8zyoqgrHcVBVFaIoguu6iOMYfd+fDXSgrmsCQIyxx5oQgiRJIlmW
-qeu63flTC4ZhnC6xbRuMMWzbBs75dQtfEQQBAGBZlr8J2rYFAIRh+HvBOI4YhgGWZSFJkt3e/apo
-nmeUZQkhBNZ1RZZlyPMcuq7/TGCaJoqi+PZ1rw3SSwQfYzqO65LPqeKck+/7pCgKaZpGaZrSNE3H
-sO64/ftvfAf/cZ6wjqI55wAAAABJRU5ErkJggg==
-"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAPBJREFU OI3Fk6+KhUAUh393vaJgM5k02FTMmuYpBPEdjIJgtuoLTPQxjIJgNk4Qk9FuOJv2siruv3thvzgz 55s5nN/ciIjwBG/PFJ8ETdPA8zyoqgrHcVBVFaIoguu6iOMYfd+fDXSgrmsCQIyxx5oQgiRJIlmW qeu63flTC4ZhnC6xbRuMMWzbBs75dQtfEQQBAGBZlr8J2rYFAIRh+HvBOI4YhgGWZSFJkt3e/apo nmeUZQkhBNZ1RZZlyPMcuq7/TGCaJoqi+PZ1rw3SSwQfYzqO65LPqeKck+/7pCgKaZpGaZrSNE3H sO64/ftvfAf/cZ6wjqI55wAAAABJRU5ErkJggg== "
        height="64"
        width="64" />
     <rect
