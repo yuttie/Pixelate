@@ -77,10 +77,10 @@
 
                 for (var dy = 0; dy < dh; ++dy) {
                     var sy = dy / view_scale + view_y;
-                    sy = sy - sh * Math.floor(sy / sh);
+                    sy = (sy - sh * Math.floor(sy / sh)) | 0;
                     for (var dx = 0; dx < dw; ++dx) {
                         var sx = dx / view_scale + view_x;
-                        sx = sx - sw * Math.floor(sx / sw);
+                        sx = (sx - sw * Math.floor(sx / sw)) | 0;
 
                         var di = (dy * dw + dx) * 4;
                         var si = (sy * sw + sx) * 4;
