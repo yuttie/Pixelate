@@ -59,9 +59,10 @@
                 var dest_data = dest.data;
 
                 for (var dy = 0; dy < dh; ++dy) {
+                    var sy = (dy * sh / dh) | 0;
                     for (var dx = 0; dx < dw; ++dx) {
-                        var sx = Math.floor(dx * sw / dw);
-                        var sy = Math.floor(dy * sh / dh);
+                        var sx = (dx * sw / dw) | 0;
+
                         var di = (dy * dw + dx) * 4;
                         var si = (sy * sw + sx) * 4;
                         for (var k = 0; k < 4; ++k) {
