@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/yuta/Labo/TA+RA/Pixelate/icon.png"
+   inkscape:export-xdpi="720"
+   inkscape:export-ydpi="720">
+  <defs
+     id="defs2987">
+    <linearGradient
+       id="linearGradient4005">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4007" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4009" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3990">
+      <stop
+         id="stop3992"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0.44999999"
+         id="stop3994" />
+      <stop
+         id="stop3996"
+         offset="0.55000001"
+         style="stop-color:#000000;stop-opacity:0;" />
+      <stop
+         id="stop3998"
+         offset="1"
+         style="stop-color:#000000;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3966">
+      <stop
+         id="stop3968"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0.44999999"
+         id="stop3970" />
+      <stop
+         id="stop3972"
+         offset="0.55000001"
+         style="stop-color:#ffffff;stop-opacity:0;" />
+      <stop
+         id="stop3974"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3940">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3942" />
+      <stop
+         id="stop3950"
+         offset="0.40000001"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="0.60000002"
+         id="stop3952" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3944" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3940"
+       id="linearGradient3946"
+       x1="12.864"
+       y1="32"
+       x2="51.136"
+       y2="32"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3966"
+       id="linearGradient3982"
+       gradientUnits="userSpaceOnUse"
+       x1="3.125e-14"
+       y1="32"
+       x2="63.999985"
+       y2="32"
+       gradientTransform="translate(7.6293945e-6,1.9073486e-6)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3990"
+       id="linearGradient4011"
+       x1="7.6293945e-06"
+       y1="32"
+       x2="63.999992"
+       y2="32"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.8890873"
+     inkscape:cx="28.441745"
+     inkscape:cy="-16.013109"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1148"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0"
+     inkscape:snap-page="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <image
+       y="0"
+       x="0"
+       id="image3937"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAPBJREFU
+OI3Fk6+KhUAUh393vaJgM5k02FTMmuYpBPEdjIJgtuoLTPQxjIJgNk4Qk9FuOJv2siruv3thvzgz
+55s5nN/ciIjwBG/PFJ8ETdPA8zyoqgrHcVBVFaIoguu6iOMYfd+fDXSgrmsCQIyxx5oQgiRJIlmW
+qeu63flTC4ZhnC6xbRuMMWzbBs75dQtfEQQBAGBZlr8J2rYFAIRh+HvBOI4YhgGWZSFJkt3e/apo
+nmeUZQkhBNZ1RZZlyPMcuq7/TGCaJoqi+PZ1rw3SSwQfYzqO65LPqeKck+/7pCgKaZpGaZrSNE3H
+sO64/ftvfAf/cZ6wjqI55wAAAABJRU5ErkJggg==
+"
+       height="64"
+       width="64" />
+    <rect
+       y="1.9073486e-06"
+       x="7.6293945e-06"
+       height="63.999996"
+       width="63.999985"
+       id="rect3956"
+       style="font-size:64px;font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient3982);fill-opacity:1;stroke:none;font-family:'ヒラギノ明朝 Pro';-inkscape-font-specification:'ヒラギノ明朝 Pro Semi-Bold'" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3883"
+       style="font-size:64px;font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient4011);fill-opacity:1;stroke:none;font-family:'ヒラギノ明朝 Pro';-inkscape-font-specification:'ヒラギノ明朝 Pro Semi-Bold'"
+       d="m 26.944,35.776 3.136,0 c 5.375995,0 10.048003,-0.640001 12.864,-1.664 5.503995,-2.047998 8.192,-6.208007 8.192,-12.736 0,-9.279991 -5.696013,-13.3120002 -18.752,-13.3120002 l -19.264,0 0,1.664 c 4.991995,0.2559997 5.504,0.8320052 5.504,6.6560002 l 0,31.296 c 0,5.823994 -0.512005,6.4 -5.76,6.592 l 0,1.664 20.224,0 0,-1.664 C 27.520006,54.08 26.944,53.503994 26.944,47.68 l 0,-11.904 m 0,-1.856 0,-24.0000002 4.096,0 c 7.423993,0 11.2,3.9680072 11.2,11.8400002 0,4.159995 -1.088002,7.552002 -3.136,9.536 -1.855998,1.727998 -4.864004,2.624 -8.832,2.624 l -3.328,0" />
+  </g>
+</svg>
