@@ -118,7 +118,7 @@
                         view_cx = iw / 2;
                         view_cy = ih / 2;
                         view_scale = max_size / iw;
-                        canvas.css('transform', 'translate3d(0, -' + (canvas.outerHeight() / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
+                        canvas.css('transform', 'translate3d(0, -' + (ch / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
                     }
                     else {
                         var cw = max_size * iw / ih;
@@ -130,7 +130,7 @@
                         view_cx = iw / 2;
                         view_cy = ih / 2;
                         view_scale = max_size / ih;
-                        canvas.css('transform', 'translate3d(0, -' + (canvas.outerHeight() / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
+                        canvas.css('transform', 'translate3d(0, -' + (ch / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
                     }
                     var ctx = canvas[0].getContext('2d');
 
