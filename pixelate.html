@@ -144,43 +144,27 @@
 
                 e.preventDefault();
             });
-            var pinch = null;
-            $('#canvas').on('touchstart', function(e) {
-                if (e.originalEvent.changedTouches.length == 2) {
-                    var t1 = e.originalEvent.changedTouches[0];
-                    var t2 = e.originalEvent.changedTouches[1];
-                    var x1 = t1.clientX;
-                    var y1 = t1.clientY;
-                    var x2 = t2.clientX;
-                    var y2 = t2.clientY;
-                    var view = $('#view');
-                    pinch = {
-                        'cx': (x2 - x1) / 2,
-                        'cy': (y2 - y1) / 2,
-                        'length': Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)),
-                        'scrollLeft': view.scrollLeft(),
-                        'scrollTop': view.scrollTop()
-                    };
-                }
+            var pinch_init_scale;
+            $('#canvas').on('gesturestart', function(e) {
+                pinch_init_scale = view_scale;
+                view_scale = e.originalEvent.scale * pinch_init_scale;
+
+                // update the view
+                var hctx = hidden_canvas[0].getContext('2d');
+                var ctx = $('#canvas')[0].getContext('2d');
+                update_view(hctx, ctx);
+
+                e.preventDefault();
             });
-            $('#canvas').on('touchmove', function(e) {
-                if (e.originalEvent.changedTouches.length == 2 && pinch) {
-                    var t1 = e.originalEvent.changedTouches[0];
-                    var t2 = e.originalEvent.changedTouches[1];
-                    var x1 = t1.clientX;
-                    var y1 = t1.clientY;
-                    var x2 = t2.clientX;
-                    var y2 = t2.clientY;
-                    var cx = (x2 - x1) / 2;
-                    var cy = (y2 - y1) / 2;
-                    var view = $('#view');
-                    view.scrollLeft(pinch.scrollLeft + (cx - pinch.cx));
-                    view.scrollTop(pinch.scrollTop + (cy - pinch.cy));
-                }
-            });
-            $('#canvas').on('touchend', function(e) {
-                if (e.originalEvent.changedTouches.length == 2) {
-                }
+            $('#canvas').on('gesturechange', function(e) {
+                view_scale = e.originalEvent.scale * pinch_init_scale;
+
+                // update the view
+                var hctx = hidden_canvas[0].getContext('2d');
+                var ctx = $('#canvas')[0].getContext('2d');
+                update_view(hctx, ctx);
+
+                e.preventDefault();
             });
         });
     </script>
