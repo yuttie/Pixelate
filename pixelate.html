@@ -76,9 +76,11 @@
                 var view_y = view_cy - dh / 2 / view_scale;
 
                 for (var dy = 0; dy < dh; ++dy) {
-                    var sy = ((dy / view_scale + view_y) % sh) | 0;
+                    var sy = dy / view_scale + view_y;
+                    sy = sy - sh * Math.floor(sy / sh);
                     for (var dx = 0; dx < dw; ++dx) {
-                        var sx = ((dx / view_scale + view_x) % sw) | 0;
+                        var sx = dx / view_scale + view_x;
+                        sx = sx - sw * Math.floor(sx / sw);
 
                         var di = (dy * dw + dx) * 4;
                         var si = (sy * sw + sx) * 4;
