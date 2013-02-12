@@ -144,6 +144,48 @@
 
                 e.preventDefault();
             });
+            var drag_init_pos;
+            var drag_init_translation;
+            $('#canvas').on('mousedown', function(e) {
+                drag_init_pos = { 'x': e.clientX, 'y': e.clientY };
+                drag_init_translation = { 'x': view_x, 'y': view_y };
+            });
+            $('#canvas').on('mousemove', function(e) {
+                if (drag_init_pos && drag_init_translation) {
+                    view_x = drag_init_translation.x - (e.clientX - drag_init_pos.x) / view_scale;
+                    view_y = drag_init_translation.y - (e.clientY - drag_init_pos.y) / view_scale;
+
+                    // update the view
+                    var hctx = hidden_canvas[0].getContext('2d');
+                    var ctx = $('#canvas')[0].getContext('2d');
+                    update_view(hctx, ctx);
+                }
+            });
+            $('#canvas').on('mouseup', function(e) {
+                drag_init_pos = null;
+                drag_init_translation = null;
+            });
+            $('#canvas').on('touchstart', function(e) {
+                var t = e.originalEvent.changedTouches[0];
+                drag_init_pos = { 'x': t.clientX, 'y': t.clientY };
+                drag_init_translation = { 'x': view_x, 'y': view_y };
+            });
+            $('#canvas').on('touchmove', function(e) {
+                var t = e.originalEvent.changedTouches[0];
+                if (drag_init_pos && drag_init_translation) {
+                    view_x = drag_init_translation.x - (t.clientX - drag_init_pos.x) / view_scale;
+                    view_y = drag_init_translation.y - (t.clientY - drag_init_pos.y) / view_scale;
+
+                    // update the view
+                    var hctx = hidden_canvas[0].getContext('2d');
+                    var ctx = $('#canvas')[0].getContext('2d');
+                    update_view(hctx, ctx);
+                }
+            });
+            $('#canvas').on('touchend', function(e) {
+                drag_init_pos = null;
+                drag_init_translation = null;
+            });
             var pinch_init_scale;
             $('#canvas').on('gesturestart', function(e) {
                 pinch_init_scale = view_scale;
