@@ -166,15 +166,33 @@
                 drag_init_translation = null;
             });
             $('#canvas').on('touchstart', function(e) {
-                var t = e.originalEvent.changedTouches[0];
-                drag_init_pos = { 'x': t.clientX, 'y': t.clientY };
                 drag_init_translation = { 'x': view_x, 'y': view_y };
+
+                var touches = e.originalEvent.touches;
+                var cx = 0;
+                var cy = 0;
+                $.each(touches, function(_, t) {
+                    cx += t.clientX;
+                    cy += t.clientY;
+                });
+                cx /= touches.length;
+                cy /= touches.length;
+                drag_init_pos = { 'x': cx, 'y': cy };
             });
             $('#canvas').on('touchmove', function(e) {
-                var t = e.originalEvent.changedTouches[0];
                 if (drag_init_pos && drag_init_translation) {
-                    view_x = drag_init_translation.x - (t.clientX - drag_init_pos.x) / view_scale;
-                    view_y = drag_init_translation.y - (t.clientY - drag_init_pos.y) / view_scale;
+                    var touches = e.originalEvent.touches;
+                    var cx = 0;
+                    var cy = 0;
+                    $.each(touches, function(_, t) {
+                        cx += t.clientX;
+                        cy += t.clientY;
+                    });
+                    cx /= touches.length;
+                    cy /= touches.length;
+
+                    view_x = drag_init_translation.x - (cx - drag_init_pos.x) / view_scale;
+                    view_y = drag_init_translation.y - (cy - drag_init_pos.y) / view_scale;
 
                     // update the view
                     var hctx = hidden_canvas[0].getContext('2d');
@@ -183,8 +201,24 @@
                 }
             });
             $('#canvas').on('touchend', function(e) {
-                drag_init_pos = null;
-                drag_init_translation = null;
+                var touches = e.originalEvent.touches;
+                if (touches.length == 0) {
+                    drag_init_pos = null;
+                    drag_init_translation = null;
+                }
+                else {
+                    drag_init_translation = { 'x': view_x, 'y': view_y };
+
+                    var cx = 0;
+                    var cy = 0;
+                    $.each(touches, function(_, t) {
+                        cx += t.clientX;
+                        cy += t.clientY;
+                    });
+                    cx /= touches.length;
+                    cy /= touches.length;
+                    drag_init_pos = { 'x': cx, 'y': cy };
+                }
             });
             var pinch_init_scale;
             $('#canvas').on('gesturestart', function(e) {
