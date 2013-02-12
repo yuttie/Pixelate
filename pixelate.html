@@ -29,10 +29,15 @@
             background-color: silver;
             box-shadow: 0 0 40px black;
             -webkit-transform: rotate3d(0, 0, 1, -2deg);
-        }
-        #canvas {
-            width: 100%;
-            height: 100%;
+            /* transitions */
+            -webkit-transition-property:         all;
+            -moz-transition-property:            all;
+            -o-transition-property:              all;
+            transition-property:                 all;
+            -webkit-transition-duration:         0.5s;
+            -moz-transition-duration:            0.5s;
+            -o-transition-duration:              0.5s;
+            transition-duration:                 0.5s;
         }
     </style>
     <script src="jquery-1.9.0.js"></script>
@@ -84,9 +89,24 @@
                     var hctx = hidden_canvas[0].getContext('2d');
                     hctx.drawImage(image[0], 0, 0, iw, ih);
 
+                    var max_size = 400;
                     var canvas = $('#canvas');
-                    canvas[0].width = 10 * iw;
-                    canvas[0].height = 10 * ih;
+                    if (iw >= ih) {
+                        var cw = max_size;
+                        var ch = max_size * ih / iw;
+                        canvas[0].width = cw;
+                        canvas[0].height = ch;
+                        canvas.width(cw);
+                        canvas.height(ch);
+                    }
+                    else {
+                        var cw = max_size * iw / ih;
+                        var ch = max_size;
+                        canvas[0].width = cw;
+                        canvas[0].height = ch;
+                        canvas.width(cw);
+                        canvas.height(ch);
+                    }
                     var ctx = canvas[0].getContext('2d');
 
                     update_view(hctx, ctx);
