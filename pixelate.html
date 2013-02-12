@@ -42,7 +42,7 @@
             $('#canvas').on('click', function() {
                 $('#launchCamera').click();
             });
-            function update_picture(hctx, ctx) {
+            function update_view(hctx, ctx) {
                 var sw = hctx.canvas.width;
                 var sh = hctx.canvas.height;
                 var dw = ctx.canvas.width;
@@ -66,30 +66,30 @@
                 }
                 ctx.putImageData(dest, 0, 0);
             }
-            var picture;
+            var image;
             var hidden_canvas = $('<canvas/>');
             $('#launchCamera').on('change', function() {
                 var file = this.files[0];
-                picture = $('<img/>');
+                image = $('<img/>');
                 var reader = new FileReader();
                 $(reader).on('load', function(e) {
-                    picture[0].src = e.target.result;
+                    image[0].src = e.target.result;
                 });
-                $(picture).on('load', function(e) {
-                    var w = picture[0].naturalWidth;
-                    var h = picture[0].naturalHeight;
+                $(image).on('load', function(e) {
+                    var iw = image[0].naturalWidth;
+                    var ih = image[0].naturalHeight;
 
-                    hidden_canvas[0].width = w;
-                    hidden_canvas[0].height = h;
+                    hidden_canvas[0].width = iw;
+                    hidden_canvas[0].height = ih;
                     var hctx = hidden_canvas[0].getContext('2d');
-                    hctx.drawImage(picture[0], 0, 0, w, h);
+                    hctx.drawImage(image[0], 0, 0, iw, ih);
 
                     var canvas = $('#canvas');
-                    canvas[0].width = 10 * w;
-                    canvas[0].height = 10 * h;
+                    canvas[0].width = 10 * iw;
+                    canvas[0].height = 10 * ih;
                     var ctx = canvas[0].getContext('2d');
 
-                    update_picture(hctx, ctx);
+                    update_view(hctx, ctx);
                 });
                 reader.readAsDataURL(file);
             });
