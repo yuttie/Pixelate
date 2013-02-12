@@ -18,20 +18,20 @@
         input[type="file"] {
             display: none;
         }
-        #view {
+        #box {
             width: 100%;
             height: 100%;
+            text-align: center;
         }
         #canvas {
             position: relative;
-            left: 50px;
-            top: 50px;
-            width: 400px;
-            height: 300px;
+            top: 50%;
+            width: 512px;
+            height: 384px;
             border: 10px solid white;
             background-color: silver;
             box-shadow: 0 0 40px black;
-            -webkit-transform: rotate3d(0, 0, 1, -2deg);
+            -webkit-transform: translate3d(0, -192px, 0) rotate3d(0, 0, 1, -2deg);
             /* transitions */
             -webkit-transition-property:         all;
             -moz-transition-property:            all;
@@ -46,6 +46,7 @@
     <script src="jquery-1.9.0.js"></script>
     <script>
         $(function() {
+            var max_size = 512;
             window.URL = window.URL || window.webkitURL;
             $('#canvas').on('click', function() {
                 $('#launchCamera').click();
@@ -96,7 +97,6 @@
                     var hctx = hidden_canvas[0].getContext('2d');
                     hctx.drawImage(image[0], 0, 0, iw, ih);
 
-                    var max_size = 400;
                     var canvas = $('#canvas');
                     if (iw >= ih) {
                         var cw = max_size;
@@ -108,6 +108,7 @@
                         view_x = 0;
                         view_y = 0;
                         view_scale = max_size / iw;
+                        canvas.css('transform', 'translate3d(0, -' + (canvas.outerHeight() / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
                     }
                     else {
                         var cw = max_size * iw / ih;
@@ -119,6 +120,7 @@
                         view_x = 0;
                         view_y = 0;
                         view_scale = max_size / ih;
+                        canvas.css('transform', 'translate3d(0, -' + (canvas.outerHeight() / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
                     }
                     var ctx = canvas[0].getContext('2d');
 
@@ -250,6 +252,8 @@
 </head>
 <body>
     <input id="launchCamera" type="file" accept="image/*">
-    <canvas id="canvas"></canvas>
+    <div id="box">
+        <canvas id="canvas"></canvas>
+    </div>
 </body>
 </html>
