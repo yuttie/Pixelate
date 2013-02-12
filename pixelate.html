@@ -58,8 +58,8 @@
             $('#canvas').on(is_touch_device() ? 'click' : 'dblclick', function() {
                 $('#launchCamera').click();
             });
-            var view_x;
-            var view_y;
+            var view_cx;
+            var view_cy;
             var view_scale;
             function update_view(hctx, ctx) {
                 var sw = hctx.canvas.width;
@@ -71,6 +71,9 @@
                 var dest = ctx.createImageData(dw, dh);
                 var src_data = src.data;
                 var dest_data = dest.data;
+
+                var view_x = view_cx - dw / 2 / view_scale;
+                var view_y = view_cy - dh / 2 / view_scale;
 
                 for (var dy = 0; dy < dh; ++dy) {
                     var sy = ((dy / view_scale + view_y) % sh) | 0;
@@ -112,8 +115,8 @@
                         canvas[0].height = ch;
                         canvas.width(cw);
                         canvas.height(ch);
-                        view_x = 0;
-                        view_y = 0;
+                        view_cx = iw / 2;
+                        view_cy = ih / 2;
                         view_scale = max_size / iw;
                         canvas.css('transform', 'translate3d(0, -' + (canvas.outerHeight() / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
                     }
@@ -124,8 +127,8 @@
                         canvas[0].height = ch;
                         canvas.width(cw);
                         canvas.height(ch);
-                        view_x = 0;
-                        view_y = 0;
+                        view_cx = iw / 2;
+                        view_cy = ih / 2;
                         view_scale = max_size / ih;
                         canvas.css('transform', 'translate3d(0, -' + (canvas.outerHeight() / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
                     }
@@ -160,12 +163,12 @@
             var drag_init_translation;
             $('#canvas').on('mousedown', function(e) {
                 drag_init_pos = { 'x': e.clientX, 'y': e.clientY };
-                drag_init_translation = { 'x': view_x, 'y': view_y };
+                drag_init_translation = { 'x': view_cx, 'y': view_cy };
             });
             $('#canvas').on('mousemove', function(e) {
                 if (drag_init_pos && drag_init_translation) {
-                    view_x = drag_init_translation.x - (e.clientX - drag_init_pos.x) / view_scale;
-                    view_y = drag_init_translation.y - (e.clientY - drag_init_pos.y) / view_scale;
+                    view_cx = drag_init_translation.x - (e.clientX - drag_init_pos.x) / view_scale;
+                    view_cy = drag_init_translation.y - (e.clientY - drag_init_pos.y) / view_scale;
 
                     // update the view
                     var hctx = hidden_canvas[0].getContext('2d');
@@ -178,7 +181,7 @@
                 drag_init_translation = null;
             });
             $('#canvas').on('touchstart', function(e) {
-                drag_init_translation = { 'x': view_x, 'y': view_y };
+                drag_init_translation = { 'x': view_cx, 'y': view_cy };
 
                 var touches = e.originalEvent.touches;
                 var cx = 0;
@@ -203,8 +206,8 @@
                     cx /= touches.length;
                     cy /= touches.length;
 
-                    view_x = drag_init_translation.x - (cx - drag_init_pos.x) / view_scale;
-                    view_y = drag_init_translation.y - (cy - drag_init_pos.y) / view_scale;
+                    view_cx = drag_init_translation.x - (cx - drag_init_pos.x) / view_scale;
+                    view_cy = drag_init_translation.y - (cy - drag_init_pos.y) / view_scale;
 
                     // update the view
                     var hctx = hidden_canvas[0].getContext('2d');
@@ -219,7 +222,7 @@
                     drag_init_translation = null;
                 }
                 else {
-                    drag_init_translation = { 'x': view_x, 'y': view_y };
+                    drag_init_translation = { 'x': view_cx, 'y': view_cy };
 
                     var cx = 0;
                     var cy = 0;
