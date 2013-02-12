@@ -47,6 +47,9 @@
             $('#canvas').on('click', function() {
                 $('#launchCamera').click();
             });
+            var view_x;
+            var view_y;
+            var view_scale;
             function update_view(hctx, ctx) {
                 var sw = hctx.canvas.width;
                 var sh = hctx.canvas.height;
@@ -59,9 +62,9 @@
                 var dest_data = dest.data;
 
                 for (var dy = 0; dy < dh; ++dy) {
-                    var sy = (dy * sh / dh) | 0;
+                    var sy = (dy / view_scale + view_y) | 0;
                     for (var dx = 0; dx < dw; ++dx) {
-                        var sx = (dx * sw / dw) | 0;
+                        var sx = (dx / view_scale + view_x) | 0;
 
                         var di = (dy * dw + dx) * 4;
                         var si = (sy * sw + sx) * 4;
@@ -99,6 +102,9 @@
                         canvas[0].height = ch;
                         canvas.width(cw);
                         canvas.height(ch);
+                        view_x = 0;
+                        view_y = 0;
+                        view_scale = max_size / iw;
                     }
                     else {
                         var cw = max_size * iw / ih;
@@ -107,6 +113,9 @@
                         canvas[0].height = ch;
                         canvas.width(cw);
                         canvas.height(ch);
+                        view_x = 0;
+                        view_y = 0;
+                        view_scale = max_size / ih;
                     }
                     var ctx = canvas[0].getContext('2d');
 
