@@ -35,7 +35,7 @@
             background-size: 30%;
             background-repeat: no-repeat;
             box-shadow: 0 0 40px black;
-            -webkit-transform: translate3d(0, -192px, 0) rotate3d(0, 0, 1, -2deg);
+            -webkit-transform: translate3d(0, -192px, 0);
             /* transitions */
             -webkit-transition-property:         all;
             -moz-transition-property:            all;
@@ -124,7 +124,7 @@
                         view_cx = iw / 2;
                         view_cy = ih / 2;
                         view_scale = max_size / iw;
-                        canvas.css('transform', 'translate3d(0, -' + (ch / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
+                        canvas.css('transform', 'translate3d(0, -' + (ch / 2) + 'px, 0)');
                     }
                     else {
                         var cw = max_size * iw / ih;
@@ -136,7 +136,7 @@
                         view_cx = iw / 2;
                         view_cy = ih / 2;
                         view_scale = max_size / ih;
-                        canvas.css('transform', 'translate3d(0, -' + (ch / 2) + 'px, 0) rotate3d(0, 0, 1, -2deg)');
+                        canvas.css('transform', 'translate3d(0, -' + (ch / 2) + 'px, 0)');
                     }
                     var ctx = canvas[0].getContext('2d');
 
